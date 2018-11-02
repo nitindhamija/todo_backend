@@ -14,10 +14,11 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.dao.ITodoDAO;
 import com.example.demo.model.Todo;
-
+@Repository
 public class TodoDAOImpl implements ITodoDAO {
 	@Autowired
 	JdbcTemplate jdbcTemplate;

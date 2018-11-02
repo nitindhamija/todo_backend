@@ -3,13 +3,17 @@ package com.example.demo.serviceimpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ITodoDAO;
 import com.example.demo.model.Todo;
 import com.example.demo.service.ITodoService;
 
+@Service
 public class TodoServiceImpl implements ITodoService {
 	@Autowired
+	@Qualifier("todoDAOImpl")
 	private ITodoDAO todoDao;
 
 	
