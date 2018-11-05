@@ -1,22 +1,15 @@
 package com.example.demo.model;
 
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity(name = "role")
@@ -29,46 +22,49 @@ public class Roles implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "id")
-    int id;
+    long id;
     
-    @Column(name = "role")
-    private String role;
+    @Column(name = "role_name")
+    private String roleName;
     
-    @JsonIgnore
-    @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)
-    private List<User> users;
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)
+//    private List<User> users;
+    
     public Roles() {
         super();
     }
 
-    public Roles(String role) {
+    public Roles(String roleName) {
         super();
-        this.role = role;
+        this.roleName = roleName;
     }
 
-    public void setId(int id){
+    public void setId(long id){
         this.id = id;
     }
 
-    public int getId(){
+    public long getId(){
         return id;
     }
 
-    public String getRole() {
-        return role;
-    }
+  
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+public String getRoleName() {
+		return roleName;
+	}
 
-    public List<User> getUsers() {
-        return users;
-    }
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
 
-    public void setUser(List<User> users) {
-        this.users = users;
-    }
+	//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUser(List<User> users) {
+//        this.users = users;
+//    }
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
@@ -76,7 +72,9 @@ public class Roles implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(role).append(users).toHashCode();
+        return new HashCodeBuilder().append(id).append(roleName).
+        		//append(users).
+        		toHashCode();
     }
 
     @Override
@@ -88,6 +86,8 @@ public class Roles implements java.io.Serializable {
             return false;
         }
         Roles rhs = ((Roles) other);
-        return new EqualsBuilder().append(id, rhs.id).append(role, rhs.role).append(users, rhs.users).isEquals();
+        return new EqualsBuilder().append(id, rhs.id).append(roleName, rhs.roleName).
+        		//append(users, rhs.users).
+        		isEquals();
     }
 }

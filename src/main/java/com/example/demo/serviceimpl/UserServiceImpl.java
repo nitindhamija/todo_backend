@@ -32,9 +32,12 @@ public class UserServiceImpl implements IUserService{
 	}
 
 	@Override
-	public User createUser(User user) {
+	public UserDTO createUser(UserDTO user) {
 		// TODO Auto-generated method stub
-		return userDAO.save(user);
+		User userEntity=UsersUtils.converToUserEntity(user); 
+		userEntity=userDAO.save(userEntity);
+		user=UsersUtils.converToUserDTO(userEntity);
+		return user;
 	}
 
 	@Override

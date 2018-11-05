@@ -13,7 +13,7 @@ public interface IUserService {
 	
 	 List<UserDTO> findAllUser();
 	 //boolean createTodo(Todo todo);
-	 User createUser(User user);
+	 UserDTO createUser(UserDTO user);
    //  void updateTodo(Todo todo);
      void deleteUser(long userId);
      User updateUser(User user);

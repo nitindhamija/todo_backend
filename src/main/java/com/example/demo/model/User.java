@@ -108,12 +108,12 @@ public class User implements java.io.Serializable {
     @Column(name = "enabled")
     private int enabled;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"), 
     inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
     private List<Roles> roles;
 
-    protected User(){
+    public User(){
         roles = new ArrayList<Roles>();
     }
 
