@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -31,7 +31,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "firstName",
     "lastName",
     "email",
-    "username",
+    "userName",
+    "password",
     "enabled",
     "roles"
    
@@ -57,8 +58,12 @@ public class UserDTO {
     @JsonProperty("email")
     private String email;
 
-    @JsonProperty("username")
-    private String username;
+    @JsonProperty("userName")
+    private String userName;
+    
+    @JsonProperty("password")
+    private String password;
+  
   
     @JsonProperty("enabled")
     private int enabled;
@@ -132,15 +137,15 @@ public class UserDTO {
 	}
 
 
-    @JsonProperty("username")
-	public String getUsername() {
-		return username;
+    @JsonProperty("userName")
+	public String getUserName() {
+		return userName;
 	}
 
 
-    @JsonProperty("username")
-	public void setUsername(String username) {
-		this.username = username;
+    @JsonProperty("userName")
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 
@@ -155,8 +160,16 @@ public class UserDTO {
 		this.enabled = enabled;
 	}
 
+    @JsonProperty("password")
+    public String getPassword() {
+		return password;
+	}
+    @JsonProperty("password")
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    @JsonProperty("roles")
+	@JsonProperty("roles")
 	public List<RolesDTO> getRoles() {
 		return roles;
 	}
@@ -175,7 +188,7 @@ public class UserDTO {
   
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(created).append(firstName).append(lastName).append(email).append(username).append(enabled).append(roles).toHashCode();
+        return new HashCodeBuilder().append(id).append(created).append(firstName).append(lastName).append(email).append(userName).append(enabled).append(roles).toHashCode();
     }
 
     @Override
@@ -187,7 +200,7 @@ public class UserDTO {
             return false;
         }
         UserDTO rhs = ((UserDTO) other);
-        return new EqualsBuilder().append(id, rhs.id).append(created, rhs.created).append(firstName, rhs.firstName).append(lastName, rhs.lastName).append(email, rhs.email).append(username, rhs.username).append(enabled, rhs.enabled).append(roles, rhs.roles).isEquals();
+        return new EqualsBuilder().append(id, rhs.id).append(created, rhs.created).append(firstName, rhs.firstName).append(lastName, rhs.lastName).append(email, rhs.email).append(userName, rhs.userName).append(enabled, rhs.enabled).append(roles, rhs.roles).isEquals();
     }
 }
 

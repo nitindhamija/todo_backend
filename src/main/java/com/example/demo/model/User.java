@@ -67,12 +67,12 @@ public class User implements java.io.Serializable {
 		this.email = email;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public int getEnabled() {
@@ -103,12 +103,23 @@ public class User implements java.io.Serializable {
     private String email;
 
     @Column(name = "username", length = 150)
-    private String username;
+    private String userName;
 
     @Column(name = "enabled")
     private int enabled;
+    
+    @Column
+    private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"), 
     inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
     private List<Roles> roles;
@@ -129,7 +140,7 @@ public class User implements java.io.Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.username = username;
+        this.userName = username;
         this.roles = roles;
     }
     

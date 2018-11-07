@@ -41,7 +41,7 @@ public class UserController {
  	return new ResponseEntity<List<UserDTO>>(list, HttpStatus.OK);
  }
 	
-	@PostMapping(APP_NAME+"/user")
+	@PostMapping("/signup")
 	public ResponseEntity<UserDTO> createTodo(@RequestBody UserDTO userDTO) {
 		userDTO = userService.createUser(userDTO);
 		if (userDTO == null) {

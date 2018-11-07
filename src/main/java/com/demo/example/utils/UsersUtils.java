@@ -1,5 +1,8 @@
 package com.demo.example.utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import com.example.demo.DTO.RolesDTO;
 import com.example.demo.DTO.UserDTO;
 import com.example.demo.model.Roles;
@@ -7,6 +10,9 @@ import com.example.demo.model.User;
 
 public class UsersUtils {
 
+	@Autowired
+	private BCryptPasswordEncoder bcryptEncoder;
+	
 	public static UserDTO converToUserDTO(User user) {
 		final UserDTO userDTO = new UserDTO();
 		if (user != null) {
@@ -17,7 +23,7 @@ public class UsersUtils {
 			userDTO.setLastName(user.getLastName());
 			userDTO.setEmail(user.getEmail());
 			userDTO.setEnabled(user.getEnabled());
-			userDTO.setUsername(user.getUsername());
+			userDTO.setUserName(user.getUserName());
 			if (user.getRoles() != null) {
 				for (int i = 0; i < user.getRoles().size(); i++) {
 					RolesDTO role= new RolesDTO();
@@ -41,7 +47,8 @@ public class UsersUtils {
 			userEntity.setLastName(user.getLastName());
 			userEntity.setEmail(user.getEmail());
 			userEntity.setEnabled(user.getEnabled());
-			userEntity.setUsername(user.getUsername());
+			userEntity.setUserName(user.getUserName());
+			userEntity.setPassword(user.getPassword());
 			if (user.getRoles() != null) {
 				for (int i = 0; i < user.getRoles().size(); i++) {
 					Roles role= new Roles();
