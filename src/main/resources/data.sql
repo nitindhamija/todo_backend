@@ -1,7 +1,7 @@
-INSERT INTO ROLE VALUES(1, 'ADMIN');
+/*INSERT INTO ROLE VALUES(1, 'ADMIN');
 INSERT INTO ROLE VALUES(2, 'APP_USER');
 INSERT INTO ROLE VALUES(3, 'READ_ONLY_USER');
-
+*/
 
 /*INSERT INTO USER VALUES(1, '2012-09-17 18:47:52.69','abc@gmail.com',1,'nitin','dhamija','ndhamija');
 INSERT INTO USER VALUES(2, '2012-09-17 18:47:52.69','abc@gmail.com',1,'nitin1','dhamija','ndhamija1');

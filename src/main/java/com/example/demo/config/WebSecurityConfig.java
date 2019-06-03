@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     	 http.headers().frameOptions().disable();
         http.cors().and().csrf().disable().
                 authorizeRequests()
-                .antMatchers("/token/*", "/signup","/h2/**","/favicon.ico").permitAll()
+                .antMatchers("/token/*", "/signup","/role/*","/h2/**","/favicon.ico").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()

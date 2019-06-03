@@ -64,10 +64,10 @@
     <version>3.0.0</version>
 </dependency>
 
-<dependency>
+ <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency> 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
@@ -93,7 +93,7 @@
               <outputDirectory>${basedir}/target/classes/static/</outputDirectory>
               <resources>
                   <resource>
-                       <directory>C:/nitin office data/office_work/work/learning/angular2/todo/angular-todo-app/dist</directory> 
+                       <directory>C:/nitin_office/learning/ng_experiment/angular/angular/angular-todo-app/dist</directory> 
                     <!--      <directory>C:/Users/nitin/Downloads/material-dashboard-angular-v2.1.0/dist</directory> -->
                   </resource>
               </resources>

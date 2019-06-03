@@ -22,8 +22,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.example.demo.model.Todo;
 import com.example.demo.service.ITodoService;
 @org.springframework.web.bind.annotation.RestController
-//@CrossOrigin(origins = {"http://localhost:4200","http://13.232.77.74:8090"})
-@CrossOrigin(origins = {"http://mystdhamija.tk"})
+@CrossOrigin(origins = {"http://localhost:4200","http://10.194.29.146:8090"})
+//@CrossOrigin(origins = {"http://mystdhamija.tk"})
 public class TodoController {
 	
 	@Autowired
