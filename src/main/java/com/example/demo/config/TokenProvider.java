@@ -1,4 +1,4 @@
-package com.example.demo.config;
+/*package com.example.demo.config;
 
 import com.example.demo.model.User;
 import io.jsonwebtoken.*;
@@ -85,3 +85,4 @@ public class TokenProvider implements Serializable {
     }
 
 }
+*/

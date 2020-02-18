@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+/*package com.example.demo.dao;
 
 
 
@@ -9,3 +9,4 @@ import com.example.demo.model.User;
 public interface IUserDAO  extends CrudRepository<User, Long> {
 	  User findByUserName(String userName);
 }
+*/

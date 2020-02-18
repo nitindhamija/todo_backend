@@ -1,4 +1,4 @@
-package com.example.demo.service;
+/*package com.example.demo.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,3 +21,4 @@ public interface IRolesService {
      RolesDTO findRoleById(long userId);
      RolesDTO findRoleByName(String roleName);
 }
+*/

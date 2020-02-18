@@ -1,4 +1,4 @@
-package com.example.demo.config;
+/*package com.example.demo.config;
 
 import java.io.IOException;
 
@@ -29,4 +29,4 @@ public class CORSFilter implements Filter {
 
 	public void destroy() {}
 
-}
+}*/

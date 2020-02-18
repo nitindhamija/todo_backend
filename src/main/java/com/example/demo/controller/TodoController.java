@@ -22,7 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.example.demo.model.Todo;
 import com.example.demo.service.ITodoService;
 @org.springframework.web.bind.annotation.RestController
-@CrossOrigin(origins = {"http://localhost:4200","http://10.194.29.146:8090"})
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:8081","http://10.194.29.146:8090"})
 //@CrossOrigin(origins = {"http://mystdhamija.tk"})
 public class TodoController {
 	
@@ -68,5 +68,16 @@ public class TodoController {
 		todoService.deleteTodo(id);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
- 
+	@GetMapping("/info")
+    public ResponseEntity<String> getAppStatus() {
+ 	System.out.println("auth-service is up and running");
+ 	return new ResponseEntity<String>("auth-service is up and running", HttpStatus.OK);
+ }
+	
+	@GetMapping("/health")
+    public ResponseEntity<String> getHealthInfo() {
+ 	System.out.println("auth-service health is good");
+ 	return new ResponseEntity<String>("auth-service health is good", HttpStatus.OK);
+ }
+	
 }

@@ -6,7 +6,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>todo</name>
 	<description>Demo project for Spring Boot</description>
@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.1.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -23,6 +23,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		 <failOnMissingWebXml>false</failOnMissingWebXml>
+		 <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
+		 <common-libs.version>0.0.1-SNAPSHOT</common-libs.version>
+		 <common-lib-path>C:\Users\n38\.m2\repository\com\nd\ms\common-libs\0.0.1-SNAPSHOT\common-libs-0.0.1-SNAPSHOT.jar</common-lib-path>
 	</properties>
 
 	<dependencies>
@@ -44,6 +47,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
 		<!-- Spring boot jdbc dependency -->
 <dependency>
      <groupId>org.springframework.boot</groupId>
@@ -64,17 +69,43 @@
     <version>3.0.0</version>
 </dependency>
 
- <dependency>
+  <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency> 
-        <dependency>
+        </dependency>  
+ <!--       <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.9.0</version>
         </dependency>
-	</dependencies>
+        -->
+        
+        	<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 
+    	<dependency>
+        		<groupId>com.nd.ms</groupId>
+        		<artifactId>ms-common-libs</artifactId>
+        		<version>0.0.1-SNAPSHOT</version>
+        		
+        	</dependency>
+
+    
+	</dependencies>
+<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
@@ -100,6 +131,7 @@
           </configuration>
       </execution>
 </executions>
+
 </plugin>
 		</plugins>
 	</build>

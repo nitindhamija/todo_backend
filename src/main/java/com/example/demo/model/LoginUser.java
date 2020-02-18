@@ -1,4 +1,4 @@
-package com.example.demo.model;
+/*package com.example.demo.model;
 
 public class LoginUser {
 
@@ -22,3 +22,4 @@ public class LoginUser {
         this.password = password;
     }
 }
+*/

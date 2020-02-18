@@ -1,4 +1,4 @@
-package com.demo.example.utils;
+/*package com.demo.example.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -63,3 +63,4 @@ public class UsersUtils {
 	}
 
 }
+*/

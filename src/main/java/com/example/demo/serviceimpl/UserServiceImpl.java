@@ -1,4 +1,4 @@
-package com.example.demo.serviceimpl;
+/*package com.example.demo.serviceimpl;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -90,3 +90,4 @@ public class UserServiceImpl implements UserDetailsService,IUserService{
 	}
 
 }
+*/

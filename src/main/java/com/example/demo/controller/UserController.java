@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+/*package com.example.demo.controller;
 
 
 import java.util.List;
@@ -31,10 +31,10 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 	public final String APP_NAME="user";
- /*@RequestMapping("/todos")
+ @RequestMapping("/todos")
  public String greet() {
   return "Hello from the other side!!!";
- }*/
+ }
 	@GetMapping(APP_NAME+"/users")
     public ResponseEntity<List<UserDTO>> getUserList() {
  	List<UserDTO> list = userService.findAllUser();
@@ -70,4 +70,4 @@ public class UserController {
 //		return new ResponseEntity<Void>(HttpStatus.OK);
 //	}
  
-}
+}*/

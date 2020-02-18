@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+/*package com.example.demo.dao;
 
 
 
@@ -13,3 +13,4 @@ public interface IRoleDAO  extends CrudRepository<Roles, Long> {
 	  
 	Roles findByRoleName(String roleName);
 }
+*/

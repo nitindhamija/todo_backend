@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+/*package com.example.demo.controller;
 
 
 import java.util.List;
@@ -24,10 +24,10 @@ public class RoleController {
 	@Autowired
 	private IRolesService rolesService;
 	public final String APP_NAME="role";
- /*@RequestMapping("/todos")
+ @RequestMapping("/todos")
  public String greet() {
   return "Hello from the other side!!!";
- }*/
+ }
 	@GetMapping(APP_NAME+"/roles")
     public ResponseEntity<List<RolesDTO>> getRoleList() {
  	List<RolesDTO> list = rolesService.findAllRoles();
@@ -63,4 +63,4 @@ public class RoleController {
 //		return new ResponseEntity<Void>(HttpStatus.OK);
 //	}
  
-}
+}*/
